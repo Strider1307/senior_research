@@ -1,4 +1,3 @@
-# senior_research
-An Analysis of Social Engineering Attacks on AI Detection Model Security
+# An Analysis of Social Engineering Attacks on AI Detection Model Security
 
-This research studies how ai phishing email detection systems handle adversarial attacks, especially in  models like BERT and large language models like ChatGPT
+This project investigates how phishing email detection systems do against adversarial attacks, particularly those targeting transformer-based models like BERT and large language models such as ChatGPT.
