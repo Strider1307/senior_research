@@ -80,7 +80,7 @@ BERT FINETUNED ON PHISHING DETECTION: https://huggingface.co/ealvaradob/bert-fin
 
 ## Figures
 
-### Figure 1
+### Table 1. Preliminary results for Base BERT and Fine-Tuned BERT. This table compares the two models across the main metrics that will be reported in the final paper. The rows represent the two models, and the columns show the evaluation metrics used to judge performance. 
 ![Figure 1](images/Figure1.png)
 
 ### Baseline BERT
@@ -89,7 +89,7 @@ BERT FINETUNED ON PHISHING DETECTION: https://huggingface.co/ealvaradob/bert-fin
 ### Fine-Tuned BERT
 ![Fine-Tuned Confusion Matrix](images/cm_finetuned.png)
 
-### Figure 3
+### Figure 3. Example of a phishing email
 ![Figure 3](images/Figure3.png)
 
 ## Code Used:
