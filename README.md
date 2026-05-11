@@ -37,7 +37,7 @@ systems​
 ## Methods:
 
 ### Dataset:​
-A labeled phishing‑email dataset (phishing_email.csv) was used. The first 100 samples were selected for evaluation. Each entry contained raw email text and a binary label (0 = legitimate, 1 = phishing). Text and labels were extracted using pandas.​
+A labeled phishing‑email dataset (phishing_email.csv) was used. The first 1000 samples were selected for evaluation. Each entry contained raw email text and a binary label (0 = legitimate, 1 = phishing). Text and labels were extracted using pandas.​
 
 ### Models​:
 Two transformer models were evaluated:​
@@ -95,7 +95,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Load first 100 rows
-df = pd.read_csv("phishing_email 1000.csv", nrows=100)
+df = pd.read_csv("phishing_email.csv", nrows=100)
 
 # Updated column name
 texts = df["text_combined"].tolist()
