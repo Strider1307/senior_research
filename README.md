@@ -170,3 +170,15 @@ plot_confusion_matrix(results_finetuned["cm"],
 print("\nSaved confusion matrices as:")
 print(" - cm_baseline.png")
 print(" - cm_finetuned.png")
+
+```
+## Downloads
+
+### Code
+[Download Code Folder](https://github.com/Strider1307/senior_research/tree/main/code)
+
+### Paper
+[Download Paper Folder](https://github.com/Strider1307/senior_research/tree/main/paper)
+
+### Download Entire Project (ZIP)
+[Download ZIP](https://github.com/Strider1307/senior_research/archive/refs/heads/main.zip)
