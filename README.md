@@ -47,7 +47,7 @@ BERT‑Base Uncased — general‑purpose pretrained model. A new classification
 Emails were tokenized using WordPiece with truncation and dynamic padding. No additional text cleaning was applied to preserve phishing‑specific linguistic cues.​
 
 ### Evaluation:​
-Both models processed the same 100‑email subset. Predictions were generated via argmax over output logits. Performance was assessed using: Accuracy, Precision, Recall, F1 Score, and a Confusion Matrix​
+Both models processed the same 1000‑email subset. Predictions were generated via argmax over output logits. Performance was assessed using: Accuracy, Precision, Recall, F1 Score, and a Confusion Matrix​
 Metrics were computed with scikit‑learn. Confusion matrices were visualized using Seaborn/Matplotlib and saved as PNG files for reproducibility in VS Code.​
 
 ### Environment​
@@ -94,8 +94,8 @@ from sklearn.metrics import (
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Load first 100 rows
-df = pd.read_csv("phishing_email.csv", nrows=100)
+# Load first 1000 rows
+df = pd.read_csv("phishing_email.csv", nrows=1000)
 
 # Updated column name
 texts = df["text_combined"].tolist()
