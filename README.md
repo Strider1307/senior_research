@@ -82,8 +82,8 @@ BERT FINETUNED ON PHISHING DETECTION: https://huggingface.co/ealvaradob/bert-fin
 
 ##Code Used:
 
-'
-
+```markdown
+```python
 import torch
 import pandas as pd
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
@@ -95,16 +95,18 @@ from sklearn.metrics import (
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("phishing_email 1000.csv", nrows=1000)
+# Load first 100 rows
+df = pd.read_csv("phishing_email 1000.csv", nrows=100)
 
+# Updated column name
 texts = df["text_combined"].tolist()
-labels = df["label"].tolist()  # 0 = legitimate, 1 = phishing
+labels = df["label"].tolist()
 
 def run_model(model_name, texts):
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForSequenceClassification.from_pretrained(model_name)
 
-  preds = []
+    preds = []
     for text in texts:
         inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True)
         with torch.no_grad():
@@ -117,13 +119,13 @@ def run_model(model_name, texts):
 def evaluate(model_name, texts, labels):
     preds = run_model(model_name, texts)
 
-  accuracy = accuracy_score(labels, preds)
+    accuracy = accuracy_score(labels, preds)
     precision, recall, f1, _ = precision_recall_fscore_support(
         labels, preds, average="binary"
     )
     cm = confusion_matrix(labels, preds)
 
-  return {
+    return {
         "preds": preds,
         "accuracy": accuracy,
         "precision": precision,
@@ -131,6 +133,7 @@ def evaluate(model_name, texts, labels):
         "f1": f1,
         "cm": cm
     }
+
 results_base = evaluate("google-bert/bert-base-uncased", texts, labels)
 results_finetuned = evaluate("ealvaradob/bert-finetuned-phishing", texts, labels)
 
@@ -168,4 +171,3 @@ plot_confusion_matrix(results_finetuned["cm"],
 print("\nSaved confusion matrices as:")
 print(" - cm_baseline.png")
 print(" - cm_finetuned.png")
-'
