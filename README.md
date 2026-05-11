@@ -1,7 +1,5 @@
 # An Analysis of Social Engineering Attacks on AI Detection Model Security
-
-This project investigates how phishing email detection systems do against adversarial attacks, particularly those targeting transformer-based models like BERT and large language models such as ChatGPT.
-##Introduction:
+## Introduction:
   Phishing remains one of the most persistent forms of social engineering because attackers
 use deceptive email content to manipulate users into revealing credentials, downloading
 malware, or trusting fraudulent communications. Recent security writing also suggests that
@@ -36,31 +34,32 @@ model documentation to explain why the bert-finetuned-phishing model will perfor
 how the models will be evaluated, and why this comparison matters for phishing detection
 systems​
 
-##Methods:
-###Dataset:​
+## Methods:
+
+### Dataset:​
 A labeled phishing‑email dataset (phishing_email.csv) was used. The first 100 samples were selected for evaluation. Each entry contained raw email text and a binary label (0 = legitimate, 1 = phishing). Text and labels were extracted using pandas.​
 
-###Models​:
+### Models​:
 Two transformer models were evaluated:​
 BERT‑Base Uncased — general‑purpose pretrained model. A new classification head was automatically initialized, producing expected “missing/unexpected key” warnings. Phishing‑Fine‑Tuned BERT — pretrained and fine‑tuned specifically for phishing detection, loading cleanly with a compatible classification head. Both models were loaded using Hugging Face AutoTokenizer and AutoModelForSequenceClassification.​
 
-###Preprocessing:​
+### Preprocessing:​
 Emails were tokenized using WordPiece with truncation and dynamic padding. No additional text cleaning was applied to preserve phishing‑specific linguistic cues.​
 
-###Evaluation:​
+### Evaluation:​
 Both models processed the same 100‑email subset. Predictions were generated via argmax over output logits. Performance was assessed using: Accuracy, Precision, Recall, F1 Score, and a Confusion Matrix​
 Metrics were computed with scikit‑learn. Confusion matrices were visualized using Seaborn/Matplotlib and saved as PNG files for reproducibility in VS Code.​
 
-###Environment​
+### Environment​
 
 Experiments were run in Python using:​
 
 transformers, torch, pandas, numpy, scikit‑learn, matplotlib, and seaborn.​
 
-##Summary:
+## Summary:
 The project involves comparing the results of a general BERT model against those obtained from a phishing-focused BERT model in order to check whether fine-tuning on specific tasks increases model performance. In particular, phishing is viewed as a critical threat caused by social engineering activities. The draft notes that transformers are effective tools in detecting the problem since they analyze the meaning in the context, and not the occurrence of particular keywords. The paper suggests that the general BERT model, namely bert-base-uncased, will act as a baseline, while bert-finetuned-phishing would be used to detect phishing emails, thus being more accurate. The methods part claims that the models should work on the same data set and produce accuracy, precision, recall, and F1 scores; however, there is still the need for more specific information concerning the data set, Python packages used, and metric calculation procedures.
 
-##Citations:
+## Citations:
 [1] Inanna, “Generative AI and Phishing: The New Face of Social Engineering,” DataSunrise. Accessed: Feb. 25, 2026. [Online]. Available: https://www.datasunrise.com/knowledge-center/ai-security/generative-ai-and-phishing/ ​
 
 [2] M. Songailaitė, E. Kankevičiūtė, B. Zhyhun, and J. Mandravickaitė, “BERT-Based Models for Phishing Detection”. ​
@@ -74,13 +73,13 @@ The project involves comparing the results of a general BERT model against those
 [6] H. Zhao, “Deep Learning in Security: Text-based Phishing Email Detection with BERT Model,” Splunk. Accessed: Feb. 25, 2026. [Online]. Available: https://www.splunk.com/en_us/blog/security/deep-learning-in-security-text-based-phishing-email-detection-with-bert-model.html 
 
 
-##Models:
+## Models:
 BERT base model (uncased): https://huggingface.co/google-bert/bert-base-uncased
 
 BERT FINETUNED ON PHISHING DETECTION: https://huggingface.co/ealvaradob/bert-finetuned-phishing
 
 
-##Code Used:
+## Code Used:
 
 ```markdown
 ```python
