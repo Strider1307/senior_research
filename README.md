@@ -83,9 +83,7 @@ BERT FINETUNED ON PHISHING DETECTION: https://huggingface.co/ealvaradob/bert-fin
 Code Used:
 
 '''
-'''
 
-# %%
 import torch
 import pandas as pd
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
@@ -119,13 +117,13 @@ def run_model(model_name, texts):
 def evaluate(model_name, texts, labels):
     preds = run_model(model_name, texts)
 
-    accuracy = accuracy_score(labels, preds)
+  accuracy = accuracy_score(labels, preds)
     precision, recall, f1, _ = precision_recall_fscore_support(
         labels, preds, average="binary"
     )
     cm = confusion_matrix(labels, preds)
 
-    return {
+  return {
         "preds": preds,
         "accuracy": accuracy,
         "precision": precision,
@@ -170,5 +168,4 @@ plot_confusion_matrix(results_finetuned["cm"],
 print("\nSaved confusion matrices as:")
 print(" - cm_baseline.png")
 print(" - cm_finetuned.png")
-'''
 '''
