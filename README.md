@@ -78,6 +78,19 @@ BERT base model (uncased): https://huggingface.co/google-bert/bert-base-uncased
 
 BERT FINETUNED ON PHISHING DETECTION: https://huggingface.co/ealvaradob/bert-finetuned-phishing
 
+## Figures
+
+### Figure 1
+![Figure 1](images/Figure1.png)
+
+### Baseline BERT
+![Baseline Confusion Matrix](images/cm_baseline.png)
+
+### Fine-Tuned BERT
+![Fine-Tuned Confusion Matrix](images/cm_finetuned.png)
+
+### Figure 3
+![Figure 3](images/Figure3.png)
 
 ## Code Used:
 
