@@ -1,4 +1,8 @@
 # An Analysis of Social Engineering Attacks on AI Detection Model Security
+## Abstract 
+
+Phishing is among the top techniques used in social engineering attacks in which attackers manipulate users into giving away sensitive information or clicking on malicious links by sending deceptive emails. Since phishing emails have become increasingly sophisticated due to recent developments like generative AI, there has been a need to improve methods for detecting such phishing emails automatically to ensure better cybersecurity. The current study seeks to examine whether fine-tuning for phishing email detection helps in enhancing transformer-based models' accuracy. Two transformer models were applied to a dataset of 1,000 emails – BERT Base Uncased for general-purpose applications and fine-tuned BERT for phishing purposes. Predictions were made on both datasets using Python analysis, with accuracy, precision, recall, F1 scores, and confusion matrices obtained as results. Results revealed near-perfect performance by the fine-tuned model in all metrics but low accuracy with too many false positives by the general-purpose model. It can be seen from the study results that fine-tuning in a specific domain can greatly help in phishing email detection. 
+
 ## Introduction:
   Phishing remains one of the most persistent forms of social engineering because attackers
 use deceptive email content to manipulate users into revealing credentials, downloading
