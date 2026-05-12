@@ -99,7 +99,6 @@ BERT FINETUNED ON PHISHING DETECTION: https://huggingface.co/ealvaradob/bert-fin
 ## Code Used:
 
 ```markdown
-```python
 import torch
 import pandas as pd
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
